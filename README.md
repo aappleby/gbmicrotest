@@ -3,6 +3,8 @@ A large collection of as-small-as-possible tests for your Game Boy emulator that
 
 These tests were originally used to debug [GateBoy](https://github.com/aappleby/MetroBoy), and are _not_ intended to verify basic functionality of your emulator. They are solely for tracking down cycle-accuracy issues in emulators that are already functional. GateBoy, for example, passes all but a handful of these tests because it does not currently simulate asynchronous timing glitches correctly.
 
+I originally wrote these tests because the other available test ROMs do a bunch of setup/teardown that made it painfully slow to iterate on back when GateBoy could only run at a tiny fraction of realtime. These tests instead check exactly one register or memory address at one specific cycle after boot and then write a pass/fail value to VRAM so the result is visible onscreen.
+
 ## Running:
 Prebuilt ROMs are in bin/ and do not require your emulator to have a mapper implemented.
 
